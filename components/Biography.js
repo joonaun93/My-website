@@ -30,6 +30,7 @@ export default function Biography() {
           layout="intrinsic"
           src={picture}
           className="profile_pic"
+          alt="profile_picture"
         ></Image>
       </div>
     </div>
