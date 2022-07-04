@@ -1,16 +1,123 @@
 html,
 body {
+  font-size: 10px;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
 }
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+.container {
+  font-size: 1.6rem;
+  padding: 5rem 20rem 0;
+}
+
+/* Navigation panel */
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+.navigation_name {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(83, 83, 83),
+    rgb(216, 216, 216)
+  );
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+.navigation_name a {
+  color: black;
+}
+
+.navigation_name a span {
+  color: white;
+}
+
+.links {
+  padding: 1rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.links a {
+  margin: 0 3rem;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+
+.footer {
+  position: absolute;
+  background: rgb(177, 177, 177);
+  height: 10rem;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+}
+
+.footer_name {
+  font-size: 1.5rem;
+  color: white;
+  margin: 3rem 20rem 0 0;
+  text-align: right;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Biography */
+
+.biography {
+  display: flex;
+  margin-top: 5rem;
+}
+
+.biography_description {
+  color: rgb(0, 0, 0, 0.8);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.biography_description p {
+  font-size: 1.9rem;
+}
+
+.biography_image {
+  padding: 5rem 2.5rem 5rem 7.5rem;
+}
+
+.profile_pic {
+  border-radius: 20px;
+}
+
+/* pages */
+/* 
+.contact {
+  font-size: 3rem;
+}
+
+.projects {
+  font-size: 3rem;
+}
+
+.blog {
+  font-size: 3rem;
+} */
