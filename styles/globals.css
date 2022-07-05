@@ -108,16 +108,164 @@ body {
   border-radius: 20px;
 }
 
-/* pages */
-/* 
-.contact {
-  font-size: 3rem;
+.side-menu {
+  display: none;
 }
 
-.projects {
-  font-size: 3rem;
+.hamb {
+  display: none;
 }
 
-.blog {
-  font-size: 3rem;
-} */
+@media only screen and (max-width: 700px) {
+  .navigation :nth-child(1) {
+    order: 1;
+  }
+  .navigation :nth-child(2) {
+    order: 4;
+  }
+  .navigation :nth-child(3) {
+    order: 3;
+  }
+  .navigation :nth-child(4) {
+    order: 2;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .biography {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .biography_image {
+    padding: 0;
+    margin-bottom: 5rem;
+  }
+
+  .biography,
+  .contact,
+  .projects,
+  .blog,
+  .blog_post {
+    padding: 2rem;
+  }
+
+  .footer_name {
+    font-size: 1.2rem;
+    color: white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 2rem 0 0 0;
+  }
+
+  .footer {
+    position: absolute;
+    background: rgb(177, 177, 177);
+    height: 5rem;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .navigation {
+    /* position: fixed;
+    width: 100%; */
+    margin: 0;
+    background: rgb(177, 177, 177);
+    /* top: 0; */
+    padding: 1rem 0;
+  }
+
+  .navigation_name a span {
+    color: white;
+  }
+
+  .navigation_name {
+    background-image: none;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 0 2rem;
+  }
+
+  .links a {
+    margin: 0;
+    letter-spacing: 1px;
+    color: white;
+  }
+
+  .navigation {
+    /* display: flex;
+    flex-direction: column; */
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(177, 177, 177);
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    border: none;
+    max-height: 0;
+    transition: all 1s ease-in-out;
+  }
+
+  /* Menu Icon */
+  .hamb {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 40px 20px; */
+  } /* Style label tag */
+
+  .hamb-line {
+    background-color: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    margin-right: 2rem;
+  } /* Style span tag */
+
+  .hamb-line::before,
+  .hamb-line::after {
+    background-color: white;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+  .hamb-line::before {
+    top: 5px;
+  }
+  .hamb-line::after {
+    top: -5px;
+  }
+
+  .side-menu {
+    display: none;
+  } /* Hide checkbox */
+
+  /* Toggle menu icon */
+  .side-menu:checked ~ .links {
+    max-height: 100%;
+    /* overflow: none; */
+  }
+  .side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+  }
+  .side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  .side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+}
