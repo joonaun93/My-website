@@ -15,11 +15,11 @@ export default function Blog({ posts }) {
   });
 
   return (
-    <div className="container blog">
-      <h1>Blog Posts</h1>
+    <section className="blog">
+      <h1 className="blog__header">Blog Posts</h1>
       <ol> {jsxPosts}</ol>
       <Link href="/">back to homepage</Link>
-    </div>
+    </section>
   );
 }
 

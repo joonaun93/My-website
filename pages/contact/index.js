@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Contact() {
   return (
-    <div className="container contact">
-      <h1>Contact Me</h1>
+    <section className="contact">
+      <h1 className="contact__header">Contact Me</h1>
       <ul>
         <li>Contact Number: +60-1137251397</li>
         <li>
@@ -14,6 +14,6 @@ export default function Contact() {
         </li>
       </ul>
       <Link href="/">Return to homepage</Link>
-    </div>
+    </section>
   );
 }

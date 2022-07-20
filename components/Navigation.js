@@ -1,24 +1,66 @@
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navigation() {
+  const [checked, setChecked] = useState(false);
+
   return (
-    <div className="navigation">
-      <div className="navigation_name">
+    <section className="navigation">
+      <div className="navigation__name">
         <Link href="/">
-          <a className="logo">
-            EK<span>JA</span>
+          <a className="navigation__logo">
+            EK<span className="navigation__logo-design">JA</span>
           </a>
         </Link>
       </div>
-      <input class="side-menu" type="checkbox" id="side-menu" />
-      <label class="hamb" for="side-menu">
-        <span class="hamb-line"></span>
+      <input
+        type="checkbox"
+        id="navi-toggle"
+        className="navigation__checkbox"
+        onChange={(e) => {
+          setChecked((checked) => !checked);
+        }}
+        defaultChecked={checked}
+        checked={checked}
+      ></input>
+      <label for="navi-toggle" className="navigation__button">
+        <span className="navigation__line"></span>
       </label>
-      <div className="links">
-        <Link href="/contact">contact</Link>
-        <Link href="/projects">projects</Link>
-        <Link href="/blog">blog</Link>
-      </div>
-    </div>
+      <div className="navigation__background"></div>
+      <ul className="navigation__list">
+        <li
+          className="navigation__items"
+          onClick={() => {
+            setChecked((checked) => !checked);
+          }}
+        >
+          <Link href="/contact">
+            <div>
+              <a className="navigation__links-1">contact</a>
+              <span className="icon-basic-mail navigation__icon"></span>
+            </div>
+          </Link>
+        </li>
+        <li
+          className="navigation__items"
+          onClick={() => setChecked((checked) => !checked)}
+        >
+          <Link href="/projects">
+            <div>
+              <a className="navigation__links-2">projects</a>
+              <span className="icon-basic-webpage-multiple navigation__icon"></span>
+            </div>
+          </Link>
+        </li>
+        <li className="navigation__items" onClick={() => setChecked(!checked)}>
+          <Link href="/blog">
+            <div>
+              <a className="navigation__links-3">blog</a>
+              <span className="icon-basic-book-pencil navigation__icon"></span>
+            </div>
+          </Link>
+        </li>
+      </ul>
+    </section>
   );
 }

@@ -43,9 +43,12 @@ export async function getStaticProps({ params }) {
 
 export default function Postpage({ post }) {
   return (
-    <div className="container blog_post">
-      <h1>{post.title.rendered}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.content.rendered }}></div>
+    <div className="blog-post">
+      <h1 className="blog-post__header">{post.title.rendered}</h1>
+      <div
+        className="blog-post__content"
+        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+      ></div>
       <Link href="/blog">back to blog index</Link>
     </div>
   );

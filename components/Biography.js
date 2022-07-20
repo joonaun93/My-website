@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function Biography() {
   return (
-    <div className="biography">
-      <div className="biography_description">
-        <h1>Profile</h1>
+    <section className="biography">
+      <div className="biography__description">
+        <h1 className="biography__header">Profile</h1>
 
         <p>
           Hello there and welcome to my site! 😊 I&apos;m a self taught frontend
@@ -24,16 +24,16 @@ export default function Biography() {
           November 2021.
         </p>
       </div>
-      <div className="biography_image">
+      <div className="biography__image">
         <Image
           width="700px"
           height="950px"
           layout="intrinsic"
           src={picture}
-          className="profile_pic"
+          className="biography__profile-pic"
           alt="profile_picture"
         ></Image>
       </div>
-    </div>
+    </section>
   );
 }

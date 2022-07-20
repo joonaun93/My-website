@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <div className="footer">
-      <div className="footer_name">Built by Edmund 👍</div>
-    </div>
+    <section className="footer">
+      <div className="footer__tag">Built by Edmund 👍</div>
+    </section>
   );
 }

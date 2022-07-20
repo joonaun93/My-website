@@ -1,0 +1,222 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(226, 226, 226);
+
+  &__checkbox {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(83, 83, 83),
+      rgb(216, 216, 216)
+    );
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 0 1rem;
+    height: 5rem;
+  }
+
+  &__logo {
+    position: relative;
+    top: 0.5rem;
+    color: black;
+
+    &-design {
+      color: white;
+    }
+  }
+
+  &__list {
+    cursor: pointer;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    list-style: none;
+  }
+
+  &__links {
+    margin: 0 3rem;
+    letter-spacing: 1px;
+
+    &-1 {
+      @extend .navigation__links;
+      &:hover {
+        color: rgb(85, 85, 85);
+      }
+    }
+    &-2 {
+      @extend .navigation__links;
+      &:hover {
+        color: rgb(85, 85, 85);
+      }
+    }
+    &-3 {
+      @extend .navigation__links;
+      &:hover {
+        color: rgb(85, 85, 85);
+      }
+    }
+  }
+
+  &__icon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(177, 177, 177);
+    padding: 1rem 0;
+    box-shadow: 0 0 1rem rgba(black, 0.3);
+
+    &__name {
+      background-image: none;
+      font-size: 3rem;
+      font-weight: bold;
+      padding: 0 2rem;
+
+      &__logo {
+        span {
+          color: white;
+        }
+      }
+    }
+
+    &__background {
+      position: fixed;
+      right: 0rem;
+      top: 0rem;
+      height: 0;
+      width: 0;
+      background-image: radial-gradient(
+        farthest-corner at 100% 0,
+        rgb(218, 218, 218),
+        rgb(71, 71, 71)
+      );
+      z-index: 1000;
+      transition: all 0.3s cubic-bezier(0.85, 0, 0.15, 1);
+    }
+
+    &__button {
+      position: fixed;
+      height: 3.5rem;
+      width: 3.5rem;
+      background-color: white;
+      border-radius: 50%;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 2000;
+      box-shadow: 0 0 1rem rgba(black, 0.3);
+    }
+
+    &__checkbox {
+      display: none;
+    }
+
+    &__list {
+      padding: 0;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      transition: all 0.3s cubic-bezier(0.85, 0, 0.15, 1);
+      z-index: 1500;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &__items {
+      padding: 5rem;
+      font-size: 4rem;
+      font-weight: 500;
+      text-align: center;
+      list-style: none;
+      display: block;
+      border: 1px solid rgba(black, 0.4);
+    }
+
+    &__icon {
+      margin-top: 2rem;
+      display: block;
+      font-size: 7rem;
+    }
+
+    &__checkbox:checked ~ &__background {
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      right: 0;
+    }
+
+    &__checkbox:checked ~ &__list {
+      opacity: 100;
+      visibility: visible;
+    }
+
+    &__line {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      &,
+      &:after,
+      &:before {
+        width: 1.5rem;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        display: inline-block;
+        transition: all 0.3s;
+      }
+
+      &:after {
+        content: " ";
+        top: -0.5rem;
+        left: 0;
+      }
+
+      &:before {
+        content: " ";
+        top: 0.5rem;
+        left: 0;
+      }
+    }
+
+    &__checkbox:checked + &__button &__line {
+      & {
+        background-color: transparent;
+      }
+
+      &:after {
+        top: 0;
+        transform: rotate(135deg);
+      }
+
+      &:before {
+        top: 0;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}
