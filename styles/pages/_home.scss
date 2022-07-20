@@ -30,19 +30,11 @@
 @media only screen and (max-width: 700px) {
   .biography {
     flex-direction: column;
-    margin: 2rem 0;
+    margin: 2rem 0 0 0;
 
     &__image {
       padding: 0;
       margin-bottom: 5rem;
     }
-  }
-
-  .biography,
-  .contact,
-  .projects,
-  .blog,
-  .blog_post {
-    padding: 4rem 2rem 2rem 2rem;
   }
 }
