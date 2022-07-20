@@ -102,17 +102,20 @@
 
     &__background {
       position: fixed;
-      right: 0rem;
-      top: 0rem;
-      height: 0;
-      width: 0;
+      left: 0rem;
+      bottom: 0rem;
+      height: 100vh;
+      width: 100%;
       background-image: radial-gradient(
         farthest-corner at 100% 0,
         rgb(218, 218, 218),
         rgb(71, 71, 71)
       );
       z-index: 1000;
-      transition: all 0.3s cubic-bezier(0.85, 0, 0.15, 1);
+      transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(10rem);
     }
 
     &__button {
@@ -137,14 +140,15 @@
       grid-template-rows: repeat(3, min-content);
       margin: 0;
       position: fixed;
-      top: 0;
-      left: 0;
+      bottom: 0rem;
+      left: 0rem;
       height: 100vh;
       width: 100%;
-      transition: all 0.3s cubic-bezier(0.85, 0, 0.15, 1);
+      transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
       z-index: 1500;
       opacity: 0;
       visibility: hidden;
+      transform: translateX(10rem);
     }
 
     &__items {
@@ -164,15 +168,19 @@
     }
 
     &__checkbox:checked ~ &__background {
-      height: 100vh;
-      width: 100%;
-      top: 0;
-      right: 0;
+      // height: 100vh;
+      // width: 100%;
+
+      opacity: 100;
+      visibility: visible;
+      transform: translateX(0rem);
     }
 
     &__checkbox:checked ~ &__list {
       opacity: 100;
       visibility: visible;
+
+      transform: translateX(0rem);
     }
 
     &__line {
