@@ -1,5 +1,8 @@
 @use "./base/reset" as *;
 
+@use "./abstract/typography" as *;
+@use "./abstract/variables" as *;
+
 @use "./layout/navigation" as *;
 @use "./layout/footer" as *;
 

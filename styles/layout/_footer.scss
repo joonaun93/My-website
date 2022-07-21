@@ -1,7 +1,9 @@
+@use "../abstract/variables" as *;
+
 .footer {
   position: absolute;
-  background: rgb(177, 177, 177);
-  height: 10rem;
+  background: $orange;
+  height: 8rem;
   width: calc(100% - 4rem);
   bottom: 2rem;
   left: 2rem;
@@ -11,7 +13,7 @@
     color: white;
     padding: 1rem;
     position: relative;
-    top: 3rem;
+    top: 2rem;
     text-align: center;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -21,12 +23,12 @@
 @media only screen and (max-width: 700px) {
   .footer {
     position: absolute;
-    background: rgb(177, 177, 177);
+    background: $orange;
     height: 5rem;
     width: 100%;
     bottom: 0px;
     left: 0px;
-    z-index: -1000;
+    z-index: -100;
 
     &__tag {
       font-size: 1.2rem;

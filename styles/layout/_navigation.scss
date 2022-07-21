@@ -1,36 +1,29 @@
+@use "../abstract/variables" as *;
+
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: rgb(226, 226, 226);
+  padding: 0 1rem;
+  background-color: $pink;
 
   &__checkbox {
     display: none;
   }
 
-  a {
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-  }
-
   &__name {
-    background-image: linear-gradient(
-      to bottom right,
-      rgb(83, 83, 83),
-      rgb(216, 216, 216)
-    );
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
     padding: 0 1rem;
     height: 5rem;
   }
 
   &__logo {
+    text-decoration: none;
+    text-transform: uppercase;
     position: relative;
     top: 0.5rem;
-    color: black;
+    color: $black;
 
     &-design {
       color: white;
@@ -42,8 +35,10 @@
     padding: 2rem;
     font-size: 2rem;
     font-weight: 600;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $beige;
     display: flex;
     list-style: none;
   }
@@ -83,7 +78,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: rgb(177, 177, 177);
+    background: $pink;
     padding: 1rem 0;
     box-shadow: 0 0 1rem rgba(black, 0.3);
 
@@ -108,8 +103,8 @@
       width: 100%;
       background-image: radial-gradient(
         farthest-corner at 100% 0,
-        rgb(218, 218, 218),
-        rgb(71, 71, 71)
+        lighten($orange, 10%),
+        $pink
       );
       z-index: 1000;
       transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
@@ -134,10 +129,22 @@
       display: none;
     }
 
+    &__content {
+      padding: auto;
+    }
+
+    &__links {
+      &-1,
+      &-2,
+      &-3 {
+        display: block;
+      }
+    }
+
     &__list {
       padding: 0;
       display: grid;
-      grid-template-rows: repeat(3, min-content);
+      grid-template-rows: repeat(3, 1fr);
       margin: 0;
       position: fixed;
       bottom: 0rem;
@@ -157,7 +164,6 @@
       font-weight: 500;
       text-align: center;
       list-style: none;
-      display: block;
       border: 1px solid rgba(black, 0.4);
       box-shadow: 0 0 1rem rgba(black, 0.1);
     }

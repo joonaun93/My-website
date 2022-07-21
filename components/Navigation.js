@@ -35,7 +35,7 @@ export default function Navigation() {
           }}
         >
           <Link href="/contact">
-            <div>
+            <div className="navigation__content">
               <a className="navigation__links-1">contact</a>
               <span className="icon-basic-mail navigation__icon"></span>
             </div>
